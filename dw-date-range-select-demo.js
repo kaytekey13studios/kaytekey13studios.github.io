@@ -1,5 +1,6 @@
-import { LitElement, html, css } from "@dreamworld/pwa-helpers/lit.js";
-import { valueProvider, valueProviderFactory } from "../dw-date-range-select.js";
+import { LitElement, html, css } from "https://unpkg.com/@dreamworld/pwa-helpers@2.0.4/lit.js" //"@dreamworld/pwa-helpers/lit.js";
+
+import { valueProvider, valueProviderFactory } from "dw-date-range-select.js";
 //import { isEqual } from "lodash-es";
 
 const DateRangeItems = [
