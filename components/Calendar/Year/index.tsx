@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dayjs from 'dayjs'
 import isBetween from 'dayjs/plugin/isBetween'
 import { IYear } from './../types'
@@ -12,6 +12,7 @@ const Year = ({
   bookedDates = [],
   lateCheckouts = [],
   monthsFrom = 1,
+  handleDayClick = (el1)=>{},
 }: IYear): JSX.Element => {
   const _year = activeYear || dayjs().year()
 
@@ -52,6 +53,9 @@ const Year = ({
               })}
 
               {daysArr.map((_, pos) => {
+
+                // const [isSelected, setIsSelected] = useState(false);
+
                 const day = pos + arrOffset
                 const _date = `${month}-${day}-${_year}`
 
@@ -59,11 +63,26 @@ const Year = ({
 
                 const isLateCheckout = Array.isArray(lateCheckouts) ? lateCheckouts.includes(_date) : false
 
+                // Read Calender allDayStates prop to determine in what state this Day should render
+                
                 return (
                   <div
                     onClick={(evt)=>{
-                      // Update the Calendar active state from here
+                      // Update the Calendar active state from here, depending on what the current state is
+                      //
+                      // const dayId = "1-1-11"//convertEventTargetToDayId(evt)
+                      
+                      // setIsSelected(!isSelected);
+                      // console.log("newSelectedValue: ", isSelected);
+
+                      
+                      // if (handleDayClick != null)
+                      //   handleDayClick(dayId)
+
+
                       console.log("Clicked the day! Data is: ", evt.target)
+
+
                     }}
                     key={pos}
                     className={`day ${isBooked ? 'booked' : ''} ${isLateCheckout ? 'isLateCheckout' : ''}`}

@@ -14,6 +14,8 @@ export interface ICalendarPropTypes {
   showKey?: boolean
   showCurrentYear?: boolean
   showControls?: boolean
+  handleDayClick?: (dayId:string) => void
+
 }
 
 export interface IHandleBookings {
@@ -69,13 +71,14 @@ export enum DayOffset {
 
 export type DaysOfWeekOffsetType = DayOffset[]
 
-export interface IYear {
-  showNumberOfMonths?: ShowMonths
-  bookedDates: blockedDaysType
-  lateCheckouts: blockedDaysType
-  activeYear: number
-  monthsFrom: number
-}
+  export interface IYear {
+    showNumberOfMonths?: ShowMonths
+    bookedDates: blockedDaysType
+    lateCheckouts: blockedDaysType
+    activeYear: number
+    monthsFrom: number
+    handleDayClick: (dayId:string) => void
+  }
 
 export interface IGetMonthName {
   [key: number]: string

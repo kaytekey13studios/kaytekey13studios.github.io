@@ -138,6 +138,17 @@
   z-index: -1;
 }
 
+
+.isSelected {
+  background-color: #522bb6;
+  color: #ffffff;
+}
+
+.isNotSelected {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 /* key */
 
 .key {
