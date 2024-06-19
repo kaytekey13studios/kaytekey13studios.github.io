@@ -15,7 +15,9 @@ export interface ICalendarPropTypes {
   showCurrentYear?: boolean
   showControls?: boolean
   handleDayClick?: (dayId:string) => void
-
+  selectedDateRange?: {},
+ // setSelectedDateRange?: ()=>void
+  
 }
 
 export interface IHandleBookings {
@@ -78,6 +80,8 @@ export type DaysOfWeekOffsetType = DayOffset[]
     activeYear: number
     monthsFrom: number
     handleDayClick: (dayId:string) => void
+    selectedCalendarDateRange: {}
+//    setSelectedCalendarDateRange: () => void
   }
 
 export interface IGetMonthName {

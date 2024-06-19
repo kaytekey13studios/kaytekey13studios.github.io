@@ -6,6 +6,8 @@ import { daysOfTheWeek, daysOfTheWeekOffset, getMonthName } from './../Utils'
 
 dayjs.extend(isBetween)
 
+// YEAR COMPONENT
+
 const Year = ({
   activeYear,
   showNumberOfMonths = 12,
@@ -13,6 +15,8 @@ const Year = ({
   lateCheckouts = [],
   monthsFrom = 1,
   handleDayClick = (el1)=>{},
+  selectedCalendarDateRange = {},
+  // setSelectedCalendarDateRange = ({}) => {}
 }: IYear): JSX.Element => {
   const _year = activeYear || dayjs().year()
 
@@ -65,29 +69,34 @@ const Year = ({
 
                 // Read Calender allDayStates prop to determine in what state this Day should render
                 
+                const convertEventTargetToDayId = (evtTarget) => {
+                  const dayString = evtTarget.getAttribute("data-day")
+                  return dayString
+                }
+
                 return (
                   <div
                     onClick={(evt)=>{
                       // Update the Calendar active state from here, depending on what the current state is
                       //
-                      // const dayId = "1-1-11"//convertEventTargetToDayId(evt)
+                      const dayId = convertEventTargetToDayId(evt.target)
                       
                       // setIsSelected(!isSelected);
                       // console.log("newSelectedValue: ", isSelected);
 
                       
-                      // if (handleDayClick != null)
-                      //   handleDayClick(dayId)
+                      if (handleDayClick != null)
+                        handleDayClick(dayId)
 
 
-                      console.log("Clicked the day! Data is: ", evt.target)
+                      console.log("From Day Component => Data clicked is: ", dayId)
 
 
                     }}
                     key={pos}
                     className={`day ${isBooked ? 'booked' : ''} ${isLateCheckout ? 'isLateCheckout' : ''}`}
                   >
-                    <span data-attribute={_date}>{day}</span>
+                    <span data-day={_date}>{day}</span>
                   </div>
                 )
               })}

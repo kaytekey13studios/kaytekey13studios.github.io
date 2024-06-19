@@ -15,7 +15,9 @@ const Calendar = ({
   showKey = true,
   showCurrentYear = true,
   showControls = true,
-  handleDayClick = (dayId) => {console.log("No handleDayClick function defined in Calendar component declaration")}
+  handleDayClick = (dayId) => {console.log("No handleDayClick function defined in Calendar component declaration")},
+  selectedDateRange = {},
+  // setSelectedDateRange = ({}) => {}
 }: ICalendarPropTypes): JSX.Element => {
   const initialMonth = 1
   const initialPage = 1
@@ -131,7 +133,10 @@ const Calendar = ({
     lateCheckouts,
     activeYear,
     monthsFrom,
-    handleDayClick: handleDayClick
+    handleDayClick: handleDayClick,
+    selectedCalendarDateRange: selectedDateRange,
+    // setSelectedCalendarDateRange: setSelectedDateRange,
+    
   }
 
   const shouldRender = {
