@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html",
-    "predeploy": "rm -rf dist && parcel build ./*.html --public-url 'https://kaytekey13studios.github.io'",
+    "predeploy": "rm -rf dist && parcel build src/*.html --public-url 'https://kaytekey13studios.github.io'",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {

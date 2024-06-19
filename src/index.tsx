@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Calendar from 'reactjs-availability-calendar'
+// import Calendar from 'reactjs-availability-calendar'
+import Calendar from './../components/Calendar'
 
 const bookings = [
   {
@@ -18,8 +19,9 @@ const bookings = [
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
+    <h1>Hioi</h1>
     <div className='demo'>
-      <Calendar bookings={bookings} />
+    <Calendar bookings={bookings} />
     </div>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
